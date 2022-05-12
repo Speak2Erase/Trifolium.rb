@@ -1,4 +1,4 @@
-require "digest"
+require "openssl"
 require_relative "../groups"
 
 class Client
@@ -20,7 +20,8 @@ class Client
         i += 1
       end
     end
-    newtoken = Digest::SHA256.hexdigest token
+    digest = OpenSSL::Digest.new('sha256')
+    newtoken = OpenSSL::HMAC.hexdigest(digest, password, token)
 
     db.insert("users", {
       "username" => username,
