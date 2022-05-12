@@ -1,0 +1,13 @@
+source "https://rubygems.org"
+
+gem "sqlite3"
+gem "json"
+gem "readline"
+gem "concurrent-ruby"
+gem "digest"
+gem "paint"
+gem "discordrb", git: "https://github.com/shardlab/discordrb"
+# gem "debase-ruby_core_source"
+# gem "ruby-debug-ide"
+# gem "debase", ">= 0.2.5.beta2"
+gem "pry"

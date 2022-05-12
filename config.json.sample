@@ -1,0 +1,9 @@
+{
+    "ip": "127.0.0.1",
+    "port": "5555",
+    "log_level": "INFO",
+    "login_timeout": 15,
+    "version": 2.06,
+    "max_clients": 100,
+    "enable_bot": false
+}

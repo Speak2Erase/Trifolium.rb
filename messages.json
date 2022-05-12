@@ -1,0 +1,297 @@
+{
+    "delimiter": "\\t",
+    "newline": "\\n",
+    "messages": {
+        "Hello": {
+            "opcode": "HAI",
+            "args": []
+        },
+        "Ping": {
+            "opcode": "PNG",
+            "args": []
+        },
+        "Disconnect": {
+            "opcode": "DCT",
+            "args": []
+        },
+        "Chat": {
+            "opcode": "CHT",
+            "args": ["message"]
+        },
+        "ChatAction": {
+            "opcode": "CHA",
+            "args": ["action"]
+        },
+        "ServerEntry": {
+            "opcode": "ENT",
+            "args": []
+        },
+        "MapEntry": {
+            "opcode": "MEN",
+            "args": ["map_id"]
+        },
+        "WarpPosition": {
+            "opcode": "WPS",
+            "args": ["ID", "x", "y"]
+        },
+        "MapExit": {
+            "opcode": "MEX",
+            "args": []
+        },
+        "MapExchangeVars": {
+            "opcode": "MEV",
+            "args": ["vars"]
+        },
+        "PlayerMove": {
+            "opcode": "MOV",
+            "args": ["pid", "type"]
+        },
+        "Yes": {
+            "opcode": "YES",
+            "args": ["action_id"]
+        },
+        "No": {
+            "opcode": "NOO",
+            "args": ["action_id"]
+        },
+        "Cancel": {
+            "opcode": "CAN",
+            "args": ["action_id"]
+        },
+        "Request": {
+            "opcode": "REQ",
+            "args": []
+        },
+        "ConnectionReset": {
+            "opcode": "CON",
+            "args": ["version", "game_version"]
+        },
+        "ConnectionLogin": {
+            "opcode": "LIN",
+            "args": ["username", "password"]
+        },
+        "ConnectionRegister": {
+            "opcode": "REG",
+            "args": ["username", "password"]
+        },
+        "ConnectionTrueLogin": {
+            "opcode": "TKN",
+            "args": ["token"]
+        },
+        "KickAll": {
+            "opcode": "AKA",
+            "args": []
+        },
+        "ChangePlayerPassword": {
+            "opcode": "APA",
+            "args": ["username", "password"]
+        },
+        "ChangeGuildPassword": {
+            "opcode": "AGP",
+            "args": ["guildname", "password"]
+        },
+        "ChangePlayerGroup": {
+            "opcode": "GRC",
+            "args": ["username", "group"]
+        },
+        "GlobalEval": {
+            "opcode": "AEV",
+            "args": ["code"]
+        },
+        "ServerEval": {
+            "opcode": "SEV",
+            "args": ["code"]
+        },
+        "SQLReq": {
+            "opcode": "ASQ",
+            "args": ["query"]
+        },
+        "KickPlayer": {
+            "opcode": "MKI",
+            "args": ["username"]
+        },
+        "BanPlayer": {
+            "opcode": "MBA",
+            "args": ["username"]
+        },
+        "UnbanPlayer": {
+            "opcode": "MUB",
+            "args": ["username"]
+        },
+        "GlobalChat": {
+            "opcode": "MGM",
+            "args": ["message"]
+        },
+        "Whispher": {
+            "opcode": "WCH",
+            "args": ["username", "color", "user_id", "message"]
+        },
+        "ChangePassword": {
+            "opcode": "NPS",
+            "args": ["old_password", "password"]
+        },
+        "TradeRequest": {
+            "opcode": "TRQ",
+            "args": ["username"]
+        },
+        "BuddyAdd": {
+            "opcode": "BAD",
+            "args": ["username"]
+        },
+        "BuddyRemove": {
+            "opcode": "BRE",
+            "args": ["username"]
+        },
+        "PMSend": {
+            "opcode": "PMM",
+            "args": ["username", "message"]
+        },
+        "PMGetAll": {
+            "opcode": "PMA",
+            "args": []
+        },
+        "PMGetUnread": {
+            "opcode": "PMU",
+            "args": []
+        },
+        "PMOpen": {
+            "opcode": "PMO",
+            "args": ["pm_id"]
+        },
+        "PMDelete": {
+            "opcode": "PMD",
+            "args": ["pm_id"]
+        },
+        "PMDeleteAll": {
+            "opcode": "PMC",
+            "args": []
+        },
+        "PMInboxStatus": {
+            "opcode": "PMS",
+            "args": []
+        },
+        "TradeConfirm": {
+            "opcode": "TCO",
+            "args": ["user_id"]
+        },
+        "TradeAbort": {
+            "opcode": "TCA",
+            "args": ["user_id"]
+        },
+        "TradeItems": {
+            "opcode": "TRI",
+            "args": ["user_id", "data"]
+        },
+        "TradeCancel": {
+            "opcode": "TRC",
+            "args": ["user_id"]
+        },
+        "TradeConfirmCancel": {
+            "opcode": "TCC",
+            "args": ["user_id"]
+        },
+        "TradeExecute": {
+            "opcode": "TRX",
+            "args": ["user_id"]
+        },
+        "GuildCreate": {
+            "opcode": "GCR",
+            "args": ["guildname", "password"]
+        },
+        "GuildChangePassword": {
+            "opcode": "GPS",
+            "args": ["oldpass", "password"]
+        },
+        "GuildDisband": {
+            "opcode": "GDI",
+            "args": ["password"]
+        },
+        "GuildTransfer": {
+            "opcode": "GTR",
+            "args": ["username", "password"]
+        },
+        "GuildInvite": {
+            "opcode": "GIN",
+            "args": ["username"]
+        },
+        "GuildRemoveMember": {
+            "opcode": "GRE",
+            "args": ["username"]
+        },
+        "GuildLeave": {
+            "opcode": "GLE",
+            "args": ["password"]
+        },
+        "GuildChat": {
+            "opcode": "GME",
+            "args": ["message"]
+        },
+        "SaveClear": {
+            "opcode": "SCL",
+            "args": []
+        },
+        "SaveData": {
+            "opcode": "SAV",
+            "args": ["key", "value"]
+        },
+        "SaveEnd": {
+            "opcode": "SEN",
+            "args": []
+        },
+        "LoadRequest": {
+            "opcode": "LRQ",
+            "args": []
+        },
+
+        "PlayerData": {
+            "opcode": "PLA",
+            "args": [],
+            "client": true
+        },
+        "MapEntryFinished": {
+            "opcode": "MEF",
+            "args": [],
+            "client": true
+        },
+        "TokenResult": {
+            "opcode": "TKRS",
+            "args": [],
+            "client": true
+        },
+        "TokenResponse": {
+            "opcode": "TKR",
+            "args": [],
+            "client": true
+        },
+        "LoadDataSize": {
+            "opcode": "LOS",
+            "args": [],
+            "client": true
+        },
+        "LoadDataMessage" : {
+            "opcode": "LOA",
+            "args": [],
+            "client": true
+        },
+        "LoadEnd": {
+            "opcode": "LEN",
+            "args": [],
+            "client": true
+        },
+        "Kick": {
+            "opcode": "KCK",
+            "args": [],
+            "client": true
+        },
+        "UserGroupResult": {
+            "opcode": "UGR",
+            "args": [],
+            "client": true
+        },
+        "TradeStart": {
+            "opcode": "TRS",
+            "args": [],
+            "client": true
+        }
+    }
+}
