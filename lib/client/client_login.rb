@@ -27,15 +27,6 @@ class Client
     usergroup = user["usergroup"].to_i
     username = user["username"]
 
-    # IP ban check
-    ip = socket.peeraddr[3]
-    if db.execute(
-      "SELECT DISTINCT users.user_id FROM users JOIN " +
-      "ips ON users.user_id = ips.user_id WHERE ips.ip = '#{ip}' AND banned = 1"
-    ).length > 0
-      return Result::DENIED
-    end
-
     @player.set_user_data(user_id, username, usergroup, token)
 
     db["user_data", "user_id", user_id, "lastlogin"] = Time.now.to_i
