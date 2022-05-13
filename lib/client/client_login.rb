@@ -27,6 +27,13 @@ class Client
     usergroup = user["usergroup"].to_i
     username = user["username"]
 
+    # IP ban check
+    ip = socket.peeraddr[3]
+    db["ips", "ip", ip].each do |listing|
+      user = db["users", "user_id", listing["user_id"]]
+      return Result::DENIED if user["banned"] != 0
+    end
+
     @player.set_user_data(user_id, username, usergroup, token)
 
     db["user_data", "user_id", user_id, "lastlogin"] = Time.now.to_i
