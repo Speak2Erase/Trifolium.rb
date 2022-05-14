@@ -69,6 +69,7 @@ module Messages
   KICK = "KCK"
   USERGROUPRESULT = "UGR"
   TRADESTART = "TRS"
+  UPDATEREDIRECT = "URD"
   DELIMITER = "\t"
   NEWLINE = "\n"
 
@@ -1098,6 +1099,19 @@ module Messages
     end
   end
 
+  class UpdateRedirect
+    attr_accessor :string
+
+    def initialize(string)
+      raise ArgumentError, "Got a client only message!"
+      @string = string
+    end
+
+    def accept(visitor)
+      visitor.visit_updateredirect(self)
+    end
+  end
+
   MatchTypes = {
     /\AHAI\Z/ => Hello,
     /\APNG\Z/ => Ping,
@@ -1169,6 +1183,7 @@ module Messages
     /\AKCK\Z/ => Kick,
     /\AUGR\Z/ => UserGroupResult,
     /\ATRS\Z/ => TradeStart,
+    /\AURD\Z/ => UpdateRedirect,
   }
 end
 

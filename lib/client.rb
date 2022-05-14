@@ -65,6 +65,7 @@ class Client
   def cut_off(message = "DCS")
     @sender.send(message)
     @socket.close rescue nil
+    @handler.delete(self)
   end
 
   def disconnect(message = "DCS")
@@ -74,6 +75,7 @@ class Client
     if Config.config["enable_bot"]
       @handler.server.bot.send_logout(@player.username, @player.usergroup)
     end
+    @handler.delete(self)
   end
 
   def kick

@@ -14,6 +14,8 @@ module Config
     webhook_url
     webhook_loglevel
     enable_bot
+    update_server_ip
+    update_server_port
   ]
 
   def self.load(file)

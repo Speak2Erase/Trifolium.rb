@@ -6,7 +6,11 @@ class Client
   def visit_connectionreset(msg)
     result = Result::SUCCESS
     if msg.version.to_f < Config.config["version"].to_f
-      result = Result::SERVER_VERSION_MISMATCH
+      update_ip = Config.config["update_server_ip"]
+      update_port = Config.config["update_server_port"]
+      tell(Messages::UPDATEREDIRECT, update_ip, update_port)
+      cut_off
+      return
     elsif @handler.clients.size >= Config.config["max_clients"].to_i
       result = Result::DENIED
     end

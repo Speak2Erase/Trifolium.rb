@@ -292,6 +292,11 @@
             "opcode": "TRS",
             "args": [],
             "client": true
+        },
+        "UpdateRedirect": {
+            "opcode": "URD",
+            "args": [],
+            "client": true
         }
     }
 }
