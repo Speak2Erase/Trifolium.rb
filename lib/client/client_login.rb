@@ -29,11 +29,9 @@ class Client
 
     # IP ban check
     ip = socket.peeraddr[3]
-    if db.execute(
-      "SELECT DISTINCT users.user_id FROM users JOIN " +
-      "ips ON users.user_id = ips.user_id WHERE ips.ip = '#{ip}' AND banned = 1"
-    ).length > 0
-      return Result::DENIED
+    db["ips", "ip", ip].each do |listing|
+      user = db["users", "user_id", listing["user_id"]]
+      return Result::DENIED if user["banned"] != 0
     end
 
     @player.set_user_data(user_id, username, usergroup, token)
